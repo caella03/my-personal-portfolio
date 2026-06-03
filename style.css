@@ -1,0 +1,379 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#c4d7e8;
+    color:#334155;
+    overflow-x:hidden;
+}
+
+/* Background Effects */
+body::before{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#10b98120;
+    border-radius:50%;
+    top:-200px;
+    right:-100px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#60a5fa20;
+    border-radius:50%;
+    bottom:-200px;
+    left:-100px;
+    filter:blur(120px);
+    z-index:-1;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    backdrop-filter:blur(20px);
+    background:rgba(241,245,249,.85); /* changed from white */
+    box-shadow:0 4px 20px rgba(0,0,0,.05);
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.6rem;
+    font-weight:700;
+    color:#10b981;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#334155;
+    transition:.3s;
+    font-weight:500;
+}
+
+nav a:hover{
+    color:#10b981;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:120px 8% 40px;
+    gap:60px;
+}
+
+.hero-content{
+    max-width:650px;
+}
+
+.tag{
+    display:inline-block;
+    padding:8px 16px;
+    background:#10b98115;
+    color:#10b981;
+    border-radius:30px;
+    margin-bottom:20px;
+    font-weight:500;
+}
+
+.hero h1{
+    font-size:3.5rem;
+    line-height:1.2;
+}
+
+.hero h1 span{
+    color:#10b981;
+}
+
+.typing{
+    color:#3b82f6;
+    margin:15px 0;
+    font-weight:600;
+}
+
+.hero p{
+    color:#64748b;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+/* BUTTONS */
+.buttons{
+    display:flex;
+    gap:15px;
+}
+
+.btn{
+    background:#10b981;
+    color:white;
+    text-decoration:none;
+    padding:14px 26px;
+    border-radius:12px;
+    font-weight:600;
+    box-shadow:0 10px 25px rgba(16,185,129,.25);
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:2px solid #10b981;
+    color:#10b981;
+    text-decoration:none;
+    padding:14px 26px;
+    border-radius:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-outline:hover{
+    background:#10b981;
+    color:white;
+}
+
+/* PROFILE CARD (NO PURE WHITE) */
+.profile-card{
+    width:280px;
+    height:360px;
+    background:#d0e7ff; /* changed from white */
+    border-radius:25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    padding:20px;
+}
+
+.profile-card img{
+    width:140px;
+    height:140px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #10b981;
+}
+
+.profile-card p{
+    margin-top:15px;
+    color:#64748b;
+    font-size:0.95rem;
+}
+
+/* SECTIONS */
+.section{
+    padding:70px 8%;
+}
+
+.section h2{
+    text-align:center;
+    color:#10b981;
+    margin-bottom:40px;
+    font-size:2.3rem;
+}
+
+/* STATS (soft card color) */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    padding:0 8% 50px;
+}
+
+.stat-box{
+    text-align:center;
+    padding:30px;
+    background:#8cbff1; /* changed */
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.stat-box h3{
+    font-size:2.5rem;
+    color:#10b981;
+}
+
+.stat-box p{
+    color:#64748b;
+}
+
+/* CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:18px;
+}
+
+.card{
+    background:#f1f5f9; /* changed */
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#10b981;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#64748b;
+    line-height:1.6;
+}
+
+/* PROJECT IMAGES */
+.project-card img{
+    width:100%;
+    max-height:140px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+/* TIMELINE */
+.timeline{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.timeline-item{
+    background:#f1f5f9; /* changed */
+    padding:22px;
+    border-left:4px solid #10b981;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+/* SOCIALS */
+.socials{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.socials a{
+    text-decoration:none;
+    color:#334155;
+    background:#f1f5f9; /* changed */
+    padding:12px 20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+    transition:.3s;
+}
+
+.socials a:hover{
+    background:#10b981;
+    color:rgb(59, 189, 199);
+}
+
+/* CONTACT */
+.contact-box{
+    background:#89c1fa; /* changed */
+    padding:35px;
+    border-radius:18px;
+    text-align:center;
+    line-height:2;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:25px;
+    background:#b1d3ff;
+    margin-top:30px;
+}
+
+footer h3{
+    color:#10b981;
+    margin-bottom:8px;
+}
+
+footer p{
+    color:#64748b;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+    .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+        padding-top:160px;
+    }
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .profile-card{
+        width:260px;
+        height:340px;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:2.2rem;
+    }
+
+    .section h2{
+        font-size:2rem;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn,
+    .btn-outline{
+        text-align:center;
+    }
+}
