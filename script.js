@@ -98,3 +98,31 @@ if(langBtn){
     // Accessibility: keyboard toggle
     langBtn.addEventListener('keyup', (e) => { if(e.key === 'Enter') langBtn.click(); });
 }
+
+// Ensure 'Download CV' triggers a download even if cv.pdf is missing.
+const downloadCvLink = document.getElementById('download-cv');
+if(downloadCvLink){
+    downloadCvLink.addEventListener('click', async (e) => {
+        const href = downloadCvLink.getAttribute('href');
+        try{
+            // Try a HEAD request to check existence
+            const res = await fetch(href, { method: 'HEAD' });
+            if(res.ok) return; // let browser handle download
+        }catch(err){
+            // fall through to fallback
+        }
+
+        // If we get here, the file likely doesn't exist; prevent default and create fallback
+        e.preventDefault();
+        const fallbackText = `ISIMBI Caella\nFrontend Developer\nEmail: caellaisimbi28@gmail.com\nPortfolio: https://github.com/caella03`;
+        const blob = new Blob([fallbackText], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'ISIMBI-Caella-CV.txt';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+    });
+}
