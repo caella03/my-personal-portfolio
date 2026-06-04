@@ -16,7 +16,6 @@
     <!-- Navbar -->
     <nav>
         <div class="logo">Caella.</div>
-
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#stats">Stats</a></li>
@@ -26,6 +25,11 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+
+        <div class="nav-controls">
+            <button id="lang-btn" aria-label="Change language">EN</button>
+            <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -33,25 +37,25 @@
 
         <div class="hero-content">
 
-            <span class="tag">👋 Welcome To My Portfolio</span>
+            <span class="tag" data-i18n="heroTag">👋 Welcome To My Portfolio</span>
 
-            <h1>
+            <h1 data-i18n="heroTitle">
                 Hi, I'm <span>ISIMBI Caella</span>
             </h1>
 
-            <h3 class="typing">
+            <h3 class="typing" data-i18n="heroSubtitle">
                 Frontend Developer • UI/UX Enthusiast • Creative Problem Solver
             </h3>
 
-            <p>
+            <p data-i18n="heroText">
                 Passionate about building beautiful websites,
                 modern user interfaces, and digital experiences
                 that solve real-world problems.
             </p>
 
             <div class="buttons">
-                <a href="#projects" class="btn">View Projects</a>
-                <a href="cv.pdf" class="btn-outline">Download CV</a>
+                <a href="#projects" class="btn" data-i18n="viewProjects">View Projects</a>
+                <a href="cv.pdf" class="btn-outline" data-i18n="downloadCV">Download CV</a>
             </div>
 
         </div>
@@ -95,86 +99,131 @@
     <!-- About -->
     <section class="section" id="about">
 
-        <h2>About Me</h2>
+        <h2 data-i18n="aboutHeading">About Me</h2>
 
-        <p class="about-text">
-            I am ISIMBI Caella, a passionate software developer who enjoys
-            creating responsive websites, learning new technologies,
-            and building innovative digital solutions.
+        <div class="about-grid">
+            <div class="about-text">
+                <p data-i18n="aboutIntro">I am ISIMBI Caella, a passionate software developer who enjoys creating responsive websites, learning new technologies, and building innovative digital solutions.</p>
 
-            I focus on modern web development, user experience,
-            and creating elegant designs that users love.
-        </p>
+                <p data-i18n="aboutMore">I specialize in front-end development (HTML, CSS, JavaScript) and modern frameworks. I love turning ideas into usable interfaces with attention to accessibility, performance, and delightful interactions. Outside of coding, I enjoy photography and exploring design trends.</p>
+
+                <ul class="about-list">
+                    <li data-i18n="aboutPoint1">Responsive web design</li>
+                    <li data-i18n="aboutPoint2">UI/UX design thinking</li>
+                    <li data-i18n="aboutPoint3">Performance & accessibility</li>
+                </ul>
+            </div>
+
+            <div class="about-photo">
+                <img src="caella.png" alt="Caella" />
+            </div>
+        </div>
 
     </section>
 
     <!-- Skills -->
-    <section class="section" id="skills">
+    <!-- Skills and Education (side-by-side on wide screens) -->
+    <section class="section" id="skills-education">
 
-        <h2>Skills</h2>
+        <div class="edu-skills">
 
-        <div class="grid">
+            <div class="skills" id="skills">
+                <h2 data-i18n="skillsHeading">Skills</h2>
 
-            <div class="card">
-                <h3>HTML5</h3>
-                <p>Semantic and accessible web pages.</p>
+                <div class="grid skills-grid">
+
+                    <div class="card skill-card">
+                        <div class="skill-row">
+                            <!-- HTML5 SVG -->
+                            <svg class="skill-icon" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#E44D26" d="M19 3l9 104 36 10 36-10 9-104z"/><path fill="#F16529" d="M64 116v-99l29 8  -2 22H64z"/></svg>
+                            <div>
+                                <h3>HTML5</h3>
+                                <p>Semantic and accessible web pages.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card skill-card">
+                        <div class="skill-row">
+                            <!-- CSS3 SVG -->
+                            <svg class="skill-icon" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#1572B6" d="M19 3l9 104 36 10 36-10 9-104z"/></svg>
+                            <div>
+                                <h3>CSS3</h3>
+                                <p>Responsive and modern styling.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card skill-card">
+                        <div class="skill-row">
+                            <!-- JS SVG -->
+                            <svg class="skill-icon" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path fill="#F0DB4F" d="M4 4h120v120H4z"/></svg>
+                            <div>
+                                <h3>JavaScript</h3>
+                                <p>Interactive user experiences.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card skill-card">
+                        <div class="skill-row">
+                            <!-- Vue SVG (simplified) -->
+                            <svg class="skill-icon" viewBox="0 0 261.76 226.69" xmlns="http://www.w3.org/2000/svg"><path fill="#41B883" d="M130.88 0L0 226.69h52.35L130.88 69.7 209.41 226.69H261.76z"/></svg>
+                            <div>
+                                <h3>Vue.js</h3>
+                                <p>Modern frontend development.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card skill-card">
+                        <div class="skill-row">
+                            <!-- Tailwind SVG (simple) -->
+                            <svg class="skill-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#38B2AC" d="M12 2C6.48 2 2 6.48 2 12h4c0-3.31 2.69-6 6-6V2z"/></svg>
+                            <div>
+                                <h3>Tailwind CSS</h3>
+                                <p>Fast and efficient styling.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card skill-card">
+                        <div class="skill-row">
+                            <!-- Git SVG -->
+                            <svg class="skill-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#F05032" d="M8.7 11.3L6 9 13 2l2.7 2.7L8.7 11.3z"/></svg>
+                            <div>
+                                <h3>Git & GitHub</h3>
+                                <p>Version control and collaboration.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
-            <div class="card">
-                <h3>CSS3</h3>
-                <p>Responsive and modern styling.</p>
-            </div>
+            <div class="education" id="education">
+                <h2 data-i18n="educationHeading">Education</h2>
 
-            <div class="card">
-                <h3>JavaScript</h3>
-                <p>Interactive user experiences.</p>
-            </div>
+                <div class="timeline">
 
-            <div class="card">
-                <h3>Vue.js</h3>
-                <p>Modern frontend development.</p>
-            </div>
+                    <div class="timeline-item">
+                        <h3 data-i18n="edu1Title">Software Development Studies</h3>
+                        <p data-i18n="edu1Text">Learning programming, databases, web development and software engineering.</p>
+                    </div>
 
-            <div class="card">
-                <h3>Tailwind CSS</h3>
-                <p>Fast and efficient styling.</p>
-            </div>
+                    <div class="timeline-item">
+                        <h3 data-i18n="edu2Title">Continuous Learning</h3>
+                        <p data-i18n="edu2Text">Exploring Vue.js, Tailwind CSS, UI/UX design and modern technologies.</p>
+                    </div>
 
-            <div class="card">
-                <h3>Git & GitHub</h3>
-                <p>Version control and collaboration.</p>
+                </div>
             </div>
 
         </div>
 
     </section>
 
-    <!-- Education -->
-    <section class="section" id="education">
-
-        <h2>Education</h2>
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-                <h3>Software Development Studies</h3>
-                <p>
-                    Learning programming, databases,
-                    web development and software engineering.
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>Continuous Learning</h3>
-                <p>
-                    Exploring Vue.js, Tailwind CSS,
-                    UI/UX design and modern technologies.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
+    <!-- (Duplicate Education section removed; education content is present inside the skills-education area) -->
 
     <!-- Services -->
     <section class="section" id="services">
@@ -302,5 +351,6 @@
 
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
