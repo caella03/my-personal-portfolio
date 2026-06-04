@@ -291,6 +291,45 @@ nav a:hover{
     line-height:1.6;
 }
 
+/* About cards */
+.about-cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:20px;
+}
+
+.about-card{
+    text-align:left;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.about-card .card-icon{
+    width:44px;
+    height:44px;
+    color:var(--accent);
+}
+
+.about-card h3{
+    margin:0;
+    color:var(--primary);
+}
+
+@media(max-width:900px){
+    .about-cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .about-cards{
+        grid-template-columns:1fr;
+    }
+}
+
 /* PROJECT IMAGES */
 .project-card img{
     width:100%;
